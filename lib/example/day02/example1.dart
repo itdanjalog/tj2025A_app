@@ -43,7 +43,7 @@ void main(){ // main 스레드 갖는 함수
   // [6] null 갖는 타입 , 타입명 뒤에 ?
   String? nickName; // ? : null허용
   nickName = null;
-  print( "닉네임 : ${ nickName ?? '미정' } ");
+  print( "닉네임 : ${ nickName ?? '미정' } "); // 조건 ?? null아닐때
 
   // [7] if , for 제어문들은 자바 와 동일
 
