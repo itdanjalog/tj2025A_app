@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget{ // [1-1] StatelessWidget 상속받는다.
           body: Center(
             child: Column(
             children: [
-            Text("세로 정렬 첫번째 위젯1") ,
-            Text("세로 정렬 두번째 위젯2") ,
-            TextButton( onPressed : increment , child: Text("세로 정렬 세번째 위젯3"), ),
-            Text("세로 정렬 네번째 위젯4 COUNT : ${ count } ")
-          ], ), ),
+              Text("세로 정렬 첫번째 위젯1") ,
+              Text("세로 정렬 두번째 위젯2") ,
+              TextButton( onPressed : increment , child: Text("세로 정렬 세번째 위젯3"), ),
+              Text("세로 정렬 네번째 위젯4 COUNT : ${ count } ")
+            ], ), ),
         )
     );
   }
