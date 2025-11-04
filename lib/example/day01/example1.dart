@@ -24,10 +24,10 @@ class MyApp2 extends StatelessWidget{
     // return MaterialApp( home: Text("안녕하세요") , );
     // return MaterialApp( home: Scaffold( 속성명 : 값 , 속성명 : 값 ) , );
     return MaterialApp(
-      home: Scaffold(
-          appBar : AppBar( title: Text("여기가 상단바") ) ,   // 상단 바
-          body : Text("여기가 본문(코드수정)")  ,       // 본문
-          bottomNavigationBar: BottomAppBar( child: Text("여기가 하단바") ) , // 하단바
+      home:  Scaffold(
+          appBar :  AppBar( title:  Text("여기가 상단바") ) ,   // 상단 바
+          body :  Text("여기가 본문(코드수정)")  ,       // 본문
+          bottomNavigationBar:  BottomAppBar( child:  Text("여기가 하단바") ) , // 하단바
       ) , // Scaffold END
     ); // MaterialApp end
   } // build end
