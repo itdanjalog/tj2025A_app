@@ -1,5 +1,7 @@
 // lib/example/day03/example2.dart
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+
 // [1]
 void main(){
   runApp( MyApp() ); // 최초로 실행할 위젯
@@ -25,12 +27,17 @@ class GoodsWidgetState extends State<GoodsWidget>{
   TextEditingController descCont = TextEditingController();
 
   // [4-2] goodsSave 함수정의
-  void goodsSave (){
-    final obj = {
-      'gname' : nameCont.text ,
-      'gprice' : priceCont.text ,
-      'gdesc' : descCont.text
-    }; print( obj );
+  void goodsSave () async {
+    final obj = { 'gname' : nameCont.text, 'gprice' : priceCont.text,'gdesc' : descCont.text };
+    print( obj );
+    try{
+      final dio = Dio(); // [1] Dio 객체 생선한다. // [2] 주의할점 : web[HTTP있음] 모바일[HTTP없음]
+      // (web) 빌드시 : localhost:8080 가능 , (mobile) : 192.168.40.185:8080 만 가능
+      // 스프링 컨트롤러 에서  @CrossOrigin(origins = "*") 또는 corsConfig
+      final response = await dio.post("http://192.168.40.185:8080/api/goods" , data : obj );
+      final data = response.data;
+      print( data );
+    }catch(e){ print(e); }
   }
 
   @override
