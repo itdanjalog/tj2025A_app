@@ -1,0 +1,17 @@
+// lib/example/day03/example2.dart
+import 'package:flutter/material.dart';
+// [1]
+void main(){
+  runApp( MyApp() ); // 최초로 실행할 위젯
+}
+// [2] 위젯 만들기 < 최초 메인 위젯  , App.jsx 같은 역할 >
+class MyApp extends StatelessWidget{ // 상태(useState)가 없는 위젯
+  @override // 위젯이란? 클래스 기반 이라서 , 위젯 만든다는것은 객체 생성한다 뜻
+  Widget build(BuildContext context) {
+    return MaterialApp( home : GoodsWidget() );
+  }
+}
+// [3] 위젯 만들기2 < 페이지 > , 컴포넌트 역할
+class GoodsWidget extends StatefulWidget{ } // 상태(useSate) 가 있는 위젯
+
+
