@@ -37,8 +37,26 @@ class GoodsWidgetState extends State<GoodsWidget>{
       final response = await dio.post("http://192.168.40.185:8080/api/goods" , data : obj );
       final data = response.data;
       print( data );
+      // (1) 저장 성공된 자료를 추가하여 재렌더링 또는 (2) goodAll 재호출
+      goodsAll(); // vs // setState(() { goodsList.add( data ); } );
     }catch(e){ print(e); }
   }
+
+  // [4-3] goodsAll 함수 정의 , useEffect( ()=>{} , [] ) 처럼 위젯이 최초로 열렸을때 1번실행
+  void goodsAll() async{
+    try{
+      final dio = Dio();
+      final response = await dio.get("http://192.168.40.185:8080/api/goods/list");
+      final data = response.data;
+      print( data ); // 통신 결과
+      setState( () { goodsList = data;  } ); // 통신 결과를 함수 밖 변수(상태) 업데이트(렌더링)
+    }catch(e){ print(e); }
+  }
+  // [4-4]  initState() 함수 오버라이딩 하여 웨젯의 초기 상태
+  @override // 오버라이딩
+  void initState() { goodsAll(); } // 현재 위젯이 최초 실행될때 1번 goodAll 함수 실행
+  // [4-5] dio로 가져온 데이터를 저장하는 상태 변수
+  dynamic goodsList = [];
 
   @override
   Widget build(BuildContext context) {
