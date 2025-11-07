@@ -1,5 +1,6 @@
 // lib/example/day04/main.dart
 import 'package:flutter/material.dart';
+import 'package:tj2025app/example/day04/pages/DetailPage.dart';
 import 'package:tj2025app/example/day04/pages/HomePage.dart';
 import 'package:tj2025app/example/day04/pages/InfoPage.dart';
 import 'package:tj2025app/example/day04/pages/MainPage.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget{ // 앱 전체의 루트 위젯 정의
         "/home" : (context) => HomePage() , // 다른 파일의 위젯 import
         "/info" : (context) => InfoPage() ,
         "/setting" : (context) => SettingPage(),
+        "/detail" : (context) => DetailPage(),
       },
     ); // M A end
   } // build end
