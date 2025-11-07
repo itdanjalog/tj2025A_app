@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:tj2025app/example/day04/pages/HomePage.dart';
 import 'package:tj2025app/example/day04/pages/InfoPage.dart';
+import 'package:tj2025app/example/day04/pages/SettingPage.dart';
 
 class MainPage extends StatefulWidget{
   MainPageState createState() => MainPageState();
@@ -12,6 +13,7 @@ class MainPageState extends State<MainPage>{ // 상태(state) 가 있는 위젯
   dynamic pages = [ // vs List<Widget> pages = [];
     HomePage() , // 인덱스 0 -> 홈 페이지
     InfoPage() , // 인덱스 1 -> 정보 페이지
+    SettingPage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,10 @@ class MainPageState extends State<MainPage>{ // 상태(state) 가 있는 위젯
             BottomNavigationBarItem(
                 icon: Icon( Icons.info , size: 30 ) ,
                 label : "정보" ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings , color: Colors.red,) ,
+                label: "설정"
+            )
           ]
       ),
     );

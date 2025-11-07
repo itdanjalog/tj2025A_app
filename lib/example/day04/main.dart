@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tj2025app/example/day04/pages/HomePage.dart';
 import 'package:tj2025app/example/day04/pages/InfoPage.dart';
 import 'package:tj2025app/example/day04/pages/MainPage.dart';
+import 'package:tj2025app/example/day04/pages/SettingPage.dart';
 
 void main(){ // 프로그램 실행 시작점
   runApp( MyApp() ); // runApp() 플러터 앱을 시작하는 함수
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget{ // 앱 전체의 루트 위젯 정의
         "/" : (context) => MainPage() ,
         "/home" : (context) => HomePage() , // 다른 파일의 위젯 import
         "/info" : (context) => InfoPage() ,
+        "/setting" : (context) => SettingPage(),
       },
     ); // M A end
   } // build end
